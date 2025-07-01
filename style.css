@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+body {
+    width: 50%;
+    max-width: 800px;
+    min-width: 480px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #666;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.form {
+    text-align: center;
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+.guessField {
+    width: 200px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.guessField:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+.guessSubmit {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.guessSubmit:hover {
+    background-color: #45a049;
+}
+
+.guessSubmit:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.resultParas {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.resultParas p {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.guesses {
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.lastResult {
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.lowOrHi {
+    color: #ff9800;
+    font-weight: bold;
+}
+
+button {
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #1976D2;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        width: 90%;
+        min-width: auto;
+        margin: 1rem auto;
+        padding: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .form, .resultParas {
+        padding: 1rem;
+    }
+} 
