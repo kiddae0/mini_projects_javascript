@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roller Game 🎲</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎲 Dice Roller</h1>
+            <button class="theme-toggle" id="themeToggle">
+                <img src="img/dark-mode.png" alt="Toggle Theme" id="themeIcon">
+            </button>
+        </header>
+        
+        <main>
+            <div class="dice-container">
+                <div class="dice" id="dice">
+                    <img src="img/1.svg" alt="Dice" id="diceImage">
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="roll-btn" id="rollBtn">Roll Dice</button>
+                <div class="dice-count">
+                    <label for="diceCount">Number of Dice:</label>
+                    <select id="diceCount">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="history">
+                <h3>Roll History</h3>
+                <div class="history-list" id="historyList">
+                    <!-- Roll history will be displayed here -->
+                </div>
+                <button class="clear-btn" id="clearBtn">Clear History</button>
+            </div>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
