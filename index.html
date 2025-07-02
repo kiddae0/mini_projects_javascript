@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock - Paper - Scissors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Rock - Paper - Scissors</h1>
+        <div class="choices">
+            <button class="choice-btn" id="rock">
+                <span class="emoji">✊</span>
+            </button>
+            <button class="choice-btn" id="paper">
+                <span class="emoji">✋</span>
+            </button>
+            <button class="choice-btn" id="scissors">
+                <span class="emoji">✌️</span>
+            </button>
+        </div>
+        <div class="display">
+            <p>PLAYER: <span id="playerDisplay">-</span></p>
+            <p>Computer: <span id="computerDisplay">-</span></p>
+        </div>
+        <div id="resultDisplay" class="result">IT'S A TIE!</div>
+        <div class="scoreboard">
+            <p>Player Score: <span id="playerScoreDisplay">0</span></p>
+            <p>Computer Score: <span id="computerScoreDisplay">0</span></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
