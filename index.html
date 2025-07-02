@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 class="main-title">Weather App</h1>
+    <div class="unit-toggle-row">
+      <label class="switch">
+        <input type="checkbox" id="unit-toggle">
+        <span class="slider"></span>
+      </label>
+      <span class="unit-label"><span id="f-label">°F</span> / <span id="c-label">°C</span></span>
+    </div>
+    <button class="geo-btn" type="button">Get My Location Weather</button>
+    <form class="weatherForm">
+        <input type="text" class="cityInput" placeholder="Enter city">
+        <button type="submit">Get Weather</button>
+    </form>
+    <div class="card" style="display: none;"></div>
+    <div class="forecast-row" style="display: none;"></div>
+    <script src="index.js"></script>
+    <footer class="footer">by Adam Abidi</footer>
+</body>
+</html> 

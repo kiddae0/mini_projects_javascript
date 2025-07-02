@@ -1,0 +1,292 @@
+body {
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(120deg, #4e54c8 0%, #8f94fb 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 140vw;
+    height: 140vh;
+    background: radial-gradient(circle at 60% 40%, #fff6, transparent 70%),
+                radial-gradient(circle at 20% 80%, #ffecd2 0%, transparent 60%),
+                radial-gradient(circle at 80% 80%, #a1c4fd 0%, transparent 60%);
+    filter: blur(60px);
+    z-index: 0;
+}
+
+.weatherForm {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+    justify-content: center;
+    z-index: 2;
+}
+
+.cityInput {
+    padding: 14px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 12px;
+    width: 260px;
+    outline: none;
+    background: rgba(255,255,255,0.25);
+    color: #222;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    backdrop-filter: blur(4px);
+    transition: border 0.2s, background 0.2s;
+}
+.cityInput:focus {
+    background: rgba(255,255,255,0.4);
+}
+
+button {
+    padding: 14px 32px;
+    font-size: 1.2rem;
+    background: linear-gradient(90deg, #6a82fb 0%, #4e54c8 100%);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 2px 12px rgba(67,233,123,0.10);
+    transition: background 0.2s, transform 0.15s;
+}
+button:hover {
+    background: linear-gradient(90deg, #4e54c8 0%, #6a82fb 100%);
+    transform: translateY(-2px) scale(1.04);
+}
+
+.card {
+    position: relative;
+    background: rgba(255,255,255,0.18);
+    border-radius: 32px;
+    box-shadow: 0 8px 32px rgba(30, 64, 175, 0.18), 0 1.5px 6px rgba(0,0,0,0.04);
+    text-align: center;
+    min-width: 350px;
+    max-width: 90vw;
+    padding: 48px 60px 40px 60px;
+    margin-top: 10px;
+    z-index: 2;
+    backdrop-filter: blur(16px);
+    border: 1.5px solid rgba(255,255,255,0.25);
+    transition: box-shadow 0.2s, transform 0.2s;
+    opacity: 1;
+    animation: fadeIn 0.7s;
+}
+.card:hover {
+    box-shadow: 0 12px 40px rgba(30, 64, 175, 0.22), 0 2px 8px rgba(0,0,0,0.08);
+    transform: translateY(-4px) scale(1.02);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card h1 {
+    margin: 0 0 18px 0;
+    font-size: 2.7rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #fff;
+    text-shadow: 0 2px 8px #4e54c8cc;
+}
+
+.card .temp {
+    font-size: 3.2rem;
+    margin: 10px 0 8px 0;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 0 2px 8px #4e54c8cc;
+}
+
+.card .humidity {
+    font-size: 1.2rem;
+    margin: 8px 0;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 4px #4e54c8aa;
+}
+
+.card .desc {
+    font-size: 1.3rem;
+    margin: 14px 0 0 0;
+    font-style: italic;
+    color: #f5f5f5;
+    font-weight: 400;
+    text-shadow: 0 1px 4px #4e54c8aa;
+}
+
+.card .emoji {
+    font-size: 4.2rem;
+    margin-top: 22px;
+    filter: drop-shadow(0 2px 12px #4e54c8aa);
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 18px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    opacity: 0.85;
+    text-shadow: 0 1px 4px #4e54c8aa;
+    z-index: 10;
+    font-weight: 500;
+    pointer-events: none;
+}
+
+.forecast-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 28px;
+    margin: 32px 0 0 0;
+    z-index: 2;
+    background: rgba(255,255,255,0.10);
+    border-radius: 24px;
+    padding: 18px 32px 10px 32px;
+    box-shadow: 0 4px 18px rgba(30, 64, 175, 0.10);
+    backdrop-filter: blur(8px);
+}
+
+.forecast-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 70px;
+    color: #fff;
+    font-weight: 500;
+    text-shadow: 0 1px 4px #4e54c8aa;
+}
+
+.forecast-day-label {
+    font-size: 1.1rem;
+    margin-bottom: 2px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.forecast-icon {
+    width: 48px;
+    height: 48px;
+    margin: 2px 0 4px 0;
+    filter: drop-shadow(0 2px 8px #4e54c8aa);
+}
+
+.forecast-temps {
+    font-size: 1.05rem;
+    margin-top: 2px;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 0 1px 4px #4e54c8aa;
+}
+
+.geo-btn {
+    display: block;
+    margin: 0 auto 18px auto;
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    background: linear-gradient(90deg, #8f94fb 0%, #4e54c8 100%);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 2px 12px rgba(78,84,200,0.10);
+    transition: background 0.2s, transform 0.15s;
+    z-index: 2;
+}
+.geo-btn:hover {
+    background: linear-gradient(90deg, #4e54c8 0%, #8f94fb 100%);
+    transform: translateY(-2px) scale(1.04);
+}
+
+.unit-toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 18px 0 8px 0;
+    z-index: 2;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 26px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(90deg, #8f94fb 0%, #4e54c8 100%);
+    border-radius: 26px;
+    transition: .4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: .4s;
+    box-shadow: 0 2px 8px #4e54c8aa;
+}
+input:checked + .slider {
+    background: linear-gradient(90deg, #4e54c8 0%, #8f94fb 100%);
+}
+input:checked + .slider:before {
+    transform: translateX(22px);
+}
+.unit-label {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 4px #4e54c8aa;
+}
+#f-label, #c-label {
+    font-weight: 700;
+    opacity: 0.7;
+}
+#f-label.active, #c-label.active {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.main-title {
+    text-align: center;
+    font-size: 2.7rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 32px 0 10px 0;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 24px #4e54c8cc, 0 1.5px 6px #fff4;
+    z-index: 2;
+    user-select: none;
+} 
